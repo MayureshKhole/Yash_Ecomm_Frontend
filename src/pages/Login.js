@@ -6,6 +6,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import SummaryApi from '../common';
 import { toast } from 'react-toastify';
 import Context from '../context';
+import { useDispatch } from 'react-redux';
+import { setUserDetails } from '../store/userSlice';
 
 const Login = () => {
     const [showPassword,setShowPassword] = useState(false)
@@ -15,6 +17,7 @@ const Login = () => {
     })
     const navigate = useNavigate()
     const { fetchUserDetails, fetchUserAddToCart } = useContext(Context)
+    const dispatch = useDispatch();
 
     const handleOnChange = (e) =>{
         const { name , value } = e.target
@@ -45,6 +48,7 @@ const Login = () => {
 
         if(dataApi.success){
             toast.success(dataApi.message)
+            dispatch(setUserDetails(dataApi.user));
             fetchUserDetails()
             fetchUserAddToCart()
             navigate('/')
