@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import Logo from './Logo'
 import { GrSearch } from "react-icons/gr";
-import { FaRegCircleUser } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,6 +9,7 @@ import { toast } from 'react-toastify'
 import { setUserDetails } from '../store/userSlice';
 import ROLE from '../common/role';
 import Context from '../context';
+import { FaRegCircleUser } from 'react-icons/fa6';
 
 const Header = () => {
   const user = useSelector(state => state?.user?.user)
