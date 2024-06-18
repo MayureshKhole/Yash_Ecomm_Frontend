@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import Logo from './Logo'
 import { GrSearch } from "react-icons/gr";
-import { FaRegCircleUser } from "react-icons/fa6";
+import { FaRegCircleUser } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -92,6 +92,7 @@ const Header = () => {
                     menuDisplay && (
                       <div className='absolute bg-white bottom-0 top-11 h-fit p-2 shadow-lg rounded' >
                         <nav>
+                          <Link to={"/admin-panel/all-products"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Admin Panel</Link>
                           {
                             user?.role === ROLE.ADMIN && (
                               <Link to={"/admin-panel/all-products"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Admin Panel</Link>

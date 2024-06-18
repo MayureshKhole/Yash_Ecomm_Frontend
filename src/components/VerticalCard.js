@@ -46,6 +46,7 @@ const VerticalCard = ({loading,data = []}) => {
                          <div className='p-4 grid gap-3'>
                              <h2 className='font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-black'>{product?.productName}</h2>
                              <p className='capitalize text-slate-500'>{product?.category}</p>
+                             <p className='capitalize text-slate-500'>{product?.description}</p>
                              <div className='flex gap-3'>
                                  <p className='text-red-600 font-medium'>{ displayINRCurrency(product?.sellingPrice) }</p>
                                  <p className='text-slate-500 line-through'>{ displayINRCurrency(product?.price)  }</p>
