@@ -41,12 +41,13 @@ const Login = () => {
         })
 
         const dataApi = await dataResponse.json()
+        console.log("Login ",dataApi)
 
         if(dataApi.success){
             toast.success(dataApi.message)
-            navigate('/')
             fetchUserDetails()
             fetchUserAddToCart()
+            navigate('/')
         }
 
         if(dataApi.error){
