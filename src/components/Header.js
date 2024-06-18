@@ -120,7 +120,7 @@ const Header = () => {
               
 
 
-                <div>
+                {/* <div>
                   {
                     user?._id  ? (
                       <button onClick={handleLogout} className='px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700'>Logout</button>
@@ -130,7 +130,7 @@ const Header = () => {
                     )
                   }
                     
-                </div>
+                </div> */}
 
             </div>
 
