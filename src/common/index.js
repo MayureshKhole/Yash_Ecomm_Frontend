@@ -1,4 +1,4 @@
-const backendDomin = "https://ecomm-yash-backend.vercel.app/"
+const backendDomin = "https://ecomm-yash-backend.vercel.app"
 
 const SummaryApi = {
     signUP : {
