@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import Logo from './Logo'
 import { GrSearch } from "react-icons/gr";
+import { FaRegCircleUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +10,6 @@ import { toast } from 'react-toastify'
 import { setUserDetails } from '../store/userSlice';
 import ROLE from '../common/role';
 import Context from '../context';
-import { FaRegCircleUser } from 'react-icons/fa6';
 
 const Header = () => {
   const user = useSelector(state => state?.user?.user)
@@ -57,7 +57,7 @@ const Header = () => {
       <div className=' h-full container mx-auto flex items-center px-4 justify-between'>
             <div className=''>
                 <Link to={"/"}>
-                    Logo
+                    <Logo w={90} h={50}/>
                 </Link>
             </div>
 
@@ -87,12 +87,10 @@ const Header = () => {
                     )
                   }
                   
-                  
                   {
                     menuDisplay && (
                       <div className='absolute bg-white bottom-0 top-11 h-fit p-2 shadow-lg rounded' >
                         <nav>
-                          <Link to={"/admin-panel/all-products"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Admin Panel</Link>
                           {
                             user?.role === ROLE.ADMIN && (
                               <Link to={"/admin-panel/all-products"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Admin Panel</Link>
