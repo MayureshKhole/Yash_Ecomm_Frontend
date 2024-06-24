@@ -1,4 +1,5 @@
-const backendDomin = "https://ecomm-yash-backend.vercel.app"
+const backendDomin = "https://yash-ecomm-backend.vercel.app"
+
 
 const SummaryApi = {
     signUP : {
@@ -14,7 +15,7 @@ const SummaryApi = {
         method : "get"
     },
     logout_user : {
-        url : `${backendDomin}/api/userLogout`,
+        url : `${backendDomin}/api/userLogout`,    
         method : 'get'
     },
     allUser : {
