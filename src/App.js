@@ -21,6 +21,9 @@ function App() {
         credentials : 'include'
       })
       console.log("Hello")
+      if (!dataResponse.ok) {
+        throw new Error(`HTTP error! status: ${dataResponse.status}`);
+      }
 
       const dataApi = await dataResponse.json()
 
@@ -45,11 +48,12 @@ function App() {
 
   useEffect(()=>{
     /**user Details */
-    fetchUserDetails()
+    fetchUserDetails();
     /**user Details cart product */
-    fetchUserAddToCart()
+    fetchUserAddToCart();
 
   },[])
+
   return (
     <>
       <Context.Provider value={{

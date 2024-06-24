@@ -9,9 +9,6 @@ import Context from '../context';
 
 const Login = () => {
     const [showPassword,setShowPassword] = useState(false)
-    const user = useSelector(state => state?.user?.user)
-    const [userName, setUserName] = useState(null);
-
     const [data,setData] = useState({
         email : "",
         password : ""
@@ -47,17 +44,10 @@ const Login = () => {
 
         if(dataApi.success){
             toast.success(dataApi.message)
-            setUserName(true)
-
+            navigate('/')
             fetchUserDetails()
             fetchUserAddToCart()
-
-            setTimeout(() => {
-                navigate('/');
-            }, 5000);
         }
-
-        
         if(dataApi.error){
             toast.error(dataApi.message)
         }
@@ -121,12 +111,6 @@ const Login = () => {
                         <button className='bg-red-600 hover:bg-red-700 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 transition-all mx-auto block mt-6'>Login</button>
 
                     </form>
-
-                    {userName && (
-                        <div className='text-center mt-4'>
-                            <p className='text-green-600'>Welcome, {user.name}!</p>
-                        </div>
-                    )}
 
                     <p className='my-5'>Don't have account ? <Link to={"/sign-up"} className=' text-red-600 hover:text-red-700 hover:underline'>Sign up</Link></p>
             </div>
