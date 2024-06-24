@@ -25,6 +25,8 @@ function App() {
 
       if(dataApi.success){
         dispatch(setUserDetails(dataApi.data))
+      }else{
+        console.log("The UserDetails not fetched")
       }
   }
 
