@@ -20,6 +20,7 @@ function App() {
         method : SummaryApi.current_user.method,
         credentials : 'include'
       })
+      console.log("Hello")
 
       const dataApi = await dataResponse.json()
 
