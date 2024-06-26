@@ -53,17 +53,17 @@ const Header = () => {
     }
   }
   return (
-    <header className='h-16 shadow-md bg-white fixed w-full z-40'>
+    <header className='h-16  bg-white fixed w-full z-40'>
       <div className=' h-full container mx-auto flex items-center px-4 justify-between'>
-            <div className=''>
+            <div className='text-3xl font-semibold'>
                 <Link to={"/"}>
-                    Logo
+                    Ecomm-Logo
                 </Link>
             </div>
 
-            <div className='hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2'>
-                <input type='text' placeholder='search product here...' className='w-full outline-none' onChange={handleSearch} value={search}/>
-                <div className='text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white'>
+            <div className='hidden lg:flex items-center  w-full justify-between  bg-slate-100 max-w-sm border rounded-md focus-within:shadow pl-2'>
+                <input type='text' placeholder='Search for Products, Brand and More' className='w-full bg-slate-100 outline-none' onChange={handleSearch} value={search}/>
+                <div className='text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center  text-white'>
                   <GrSearch />
                 </div>
             </div>
@@ -72,14 +72,18 @@ const Header = () => {
             <div className='flex items-center gap-7'>
                 
                 <div className='relative flex justify-center'>
-
+            
                   {
                     user?._id && (
                       <div className='text-3xl cursor-pointer relative flex justify-center' onClick={()=>setMenuDisplay(preve => !preve)}>
                         {
                           user?.profilePic ? (
-                            <img src={user?.profilePic} className='w-10 h-10 rounded-full' alt={user?.name} />
-                          ) : (
+                            <div className='flex'>
+                              <img src={user?.profilePic} className='w-10 h-10 rounded-full' alt={user?.name} />
+                              <div className='text-2xl'>{user.name}</div>
+                            </div>
+                          )
+                          : (
                             <FaRegCircleUser/>
                           )
                         }
