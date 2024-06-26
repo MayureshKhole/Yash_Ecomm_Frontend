@@ -53,15 +53,15 @@ const Header = () => {
     }
   }
   return (
-    <header className='h-16  bg-white fixed w-full z-40'>
+    <header className='h-18  bg-white fixed w-full z-40'>
       <div className=' h-full container mx-auto flex items-center px-4 justify-between'>
-            <div className='text-3xl font-semibold'>
+            <div className='text-3xl mb-3 font-semibold'>
                 <Link to={"/"}>
                     Ecomm-Logo
                 </Link>
             </div>
 
-            <div className='hidden lg:flex items-center  w-full justify-between  bg-slate-100 max-w-sm border rounded-md focus-within:shadow pl-2'>
+            <div className='hidden lg:flex items-center w-96 justify-between  bg-slate-100 border rounded-md focus-within:shadow pl-2'>
                 <input type='text' placeholder='Search for Products, Brand and More' className='w-full bg-slate-100 outline-none' onChange={handleSearch} value={search}/>
                 <div className='text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center  text-white'>
                   <GrSearch />
@@ -69,7 +69,8 @@ const Header = () => {
             </div>
 
 
-            <div className='flex items-center gap-7'>
+
+            <div className='flex items-center gap-10'>
                 
                 <div className='relative flex justify-center'>
             
@@ -78,9 +79,9 @@ const Header = () => {
                       <div className='text-3xl cursor-pointer relative flex justify-center' onClick={()=>setMenuDisplay(preve => !preve)}>
                         {
                           user?.profilePic ? (
-                            <div className='flex'>
+                            <div className='flex gap-3'>
                               <img src={user?.profilePic} className='w-10 h-10 rounded-full' alt={user?.name} />
-                              <div className='text-2xl'>{user.name}</div>
+                              <div className='text-2xl mt-1 '>{user.name}</div>
                             </div>
                           )
                           : (
@@ -97,7 +98,11 @@ const Header = () => {
                         <nav>
                           {
                             user?.role === ROLE.ADMIN && (
+                              <div>
+                              <Link to={"/admin-panel/all-products"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Orders</Link>
+                              <Link to={"/admin-panel/all-products"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Wishlist</Link>
                               <Link to={"/admin-panel/all-products"} className='whitespace-nowrap hidden md:block hover:bg-slate-100 p-2' onClick={()=>setMenuDisplay(preve => !preve)}>Admin Panel</Link>
+                              </div>
                             )
                           }
                          
