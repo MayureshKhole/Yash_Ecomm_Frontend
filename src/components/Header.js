@@ -63,7 +63,7 @@ const Header = () => {
 
             <div className='hidden lg:flex items-center w-96 justify-between  bg-slate-100 border rounded-md focus-within:shadow pl-2'>
                 <input type='text' placeholder='Search for Products, Brand and More' className='w-full bg-slate-100 outline-none' onChange={handleSearch} value={search}/>
-                <div className='text-lg min-w-[50px] h-8 bg-[#f79840] flex items-center justify-center  text-white'>
+                <div className='text-lg min-w-[50px] h-8 bg-[#ffc470] flex items-center justify-center  text-black'>
                   <GrSearch />
                 </div>
             </div>
@@ -118,7 +118,7 @@ const Header = () => {
                       <Link to={"/cart"} className='text-2xl relative'>
                           <span><FaShoppingCart/></span>
       
-                          <div className='bg-[#f79840] text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3'>
+                          <div className='bg-[#ffc470] text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3'>
                               <p className='text-sm'>{context?.cartProductCount}</p>
                           </div>
                       </Link>
@@ -130,10 +130,10 @@ const Header = () => {
                 <div>
                   {
                     user?._id  ? (
-                      <button onClick={handleLogout} className='px-3 py-1 rounded-full text-black bg-[#f79840] hover:bg-[#CE9661]'>Logout</button>
+                      <button onClick={handleLogout} className='px-3 py-1 rounded-full text-black bg-[#ffc470] hover:bg-[#CE9661]'>Logout</button>
                     )
                     : (
-                    <Link to={"/login"} className='px-3 py-1 rounded-full text-white bg-[#f79840] hover:bg-[#f79840]'>Login</Link>
+                    <Link to={"/login"} className='px-3 py-1 rounded-full text-white bg-[#ffc470] hover:bg-[#ffc470]'>Login</Link>
                     )
                   }
                     
