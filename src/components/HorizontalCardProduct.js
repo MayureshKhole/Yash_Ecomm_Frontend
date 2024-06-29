@@ -72,7 +72,7 @@ const HorizontalCardProduct = ({ category, heading }) => {
                       <h2 className="font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-black bg-slate-200 animate-pulse p-1 rounded-full"></h2>
                       <p className="capitalize text-slate-500 p-1 bg-slate-200 animate-pulse rounded-full"></p>
                       <div className="flex gap-3 w-full">
-                        <p className="bg-[#ffc470] font-medium p-1 bg-slate-200 w-full animate-pulse rounded-full"></p>
+                        <p className="bg-[#A1662F] font-medium p-1 bg-slate-200 w-full animate-pulse rounded-full"></p>
                         <p className="text-slate-500 line-through p-1 bg-slate-200 w-full animate-pulse rounded-full"></p>
                       </div>
                       <button className="text-sm  text-white px-3 py-0.5 rounded-full w-full bg-slate-200 animate-pulse"></button>
@@ -100,7 +100,7 @@ const HorizontalCardProduct = ({ category, heading }) => {
                         {product?.category}
                       </p>
                       <div className="flex gap-3 mb-2 ">
-                        <p className="bg-[#ffc470] font-medium">
+                        <p className="bg-[#A1662F] font-medium">
                           {displayINRCurrency(product?.sellingPrice)}
                         </p>
                         <p className="text-slate-500 line-through">
@@ -108,7 +108,7 @@ const HorizontalCardProduct = ({ category, heading }) => {
                         </p>
                       </div>
                       <button
-                        className="text-sm bg-[#ffc470] hover:bg-[#ffc470] text-black px-3 py-0.5 rounded-full"
+                        className="text-sm bg-[#A1662F] hover:bg-[#A1662F] text-black px-3 py-0.5 rounded-full"
                         onClick={(e) => handleAddToCart(e, product?._id)}
                       >
                         Add to Cart
