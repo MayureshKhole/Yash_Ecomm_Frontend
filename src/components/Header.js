@@ -118,7 +118,7 @@ const Header = () => {
                       <Link to={"/cart"} className='text-2xl relative'>
                           <span><FaShoppingCart/></span>
       
-                          <div className='bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3'>
+                          <div className='bg-[#ffc470] text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3'>
                               <p className='text-sm'>{context?.cartProductCount}</p>
                           </div>
                       </Link>
@@ -130,10 +130,10 @@ const Header = () => {
                 <div>
                   {
                     user?._id  ? (
-                      <button onClick={handleLogout} className='px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700'>Logout</button>
+                      <button onClick={handleLogout} className='px-3 py-1 rounded-full text-white bg-[#ffc470] hover:bg-[#CE9661]'>Logout</button>
                     )
                     : (
-                    <Link to={"/login"} className='px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700'>Login</Link>
+                    <Link to={"/login"} className='px-3 py-1 rounded-full text-white bg-[#ffc470] hover:bg-[#ffc470]'>Login</Link>
                     )
                   }
                     
