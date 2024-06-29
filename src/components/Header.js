@@ -63,7 +63,7 @@ const Header = () => {
 
             <div className='hidden lg:flex items-center w-96 justify-between  bg-slate-100 border rounded-md focus-within:shadow pl-2'>
                 <input type='text' placeholder='Search for Products, Brand and More' className='w-full bg-slate-100 outline-none' onChange={handleSearch} value={search}/>
-                <div className='text-lg min-w-[50px] h-8 bg-blue-600 flex items-center justify-center  text-white'>
+                <div className='text-lg min-w-[50px] h-8 bg-[#ffc470] flex items-center justify-center  text-white'>
                   <GrSearch />
                 </div>
             </div>
@@ -130,7 +130,7 @@ const Header = () => {
                 <div>
                   {
                     user?._id  ? (
-                      <button onClick={handleLogout} className='px-3 py-1 rounded-full text-white bg-[#ffc470] hover:bg-[#CE9661]'>Logout</button>
+                      <button onClick={handleLogout} className='px-3 py-1 rounded-full text-black bg-[#ffc470] hover:bg-[#CE9661]'>Logout</button>
                     )
                     : (
                     <Link to={"/login"} className='px-3 py-1 rounded-full text-white bg-[#ffc470] hover:bg-[#ffc470]'>Login</Link>

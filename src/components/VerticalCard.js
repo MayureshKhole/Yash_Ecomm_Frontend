@@ -51,7 +51,7 @@ const VerticalCard = ({loading,data = []}) => {
                                  <p className='bg-[#ffc470] font-medium'>{ displayINRCurrency(product?.sellingPrice) }</p>
                                  <p className='text-slate-500 line-through'>{ displayINRCurrency(product?.price)  }</p>
                              </div>
-                             <button className='text-sm bg-[#ffc470] hover:bg-[#ffc470] text-white px-3 py-0.5 rounded-full' onClick={(e)=>handleAddToCart(e,product?._id)}>Add to Cart</button>
+                             <button className='text-sm bg-[#ffc470] hover:bg-[#ffc470] text-black px-3 py-0.5 rounded-full' onClick={(e)=>handleAddToCart(e,product?._id)}>Add to Cart</button>
                          </div>
                      </Link>
                  )
