@@ -1,107 +1,75 @@
-import React, { useEffect, useState } from 'react'
-import image1 from '../assest/banner/ba3.png'
-import image2 from '../assest/banner/ba2.jpg'
-import image3 from '../assest/banner/b3.avif'
-import image4 from '../assest/banner/b4.gif'
-import image5 from '../assest/banner/ba1.jpg'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
 
+import img1 from '../assest/hbanner/h1.webp';
+import img2 from '../assest/hbanner/h2.webp';
+import img3 from '../assest/hbanner/h3.webp';
+import img4 from '../assest/hbanner/h4.webp';
 
+const Banner = () => {
+  const [loading, setLoading] = useState(true); // State to control initial loading delay
+  const [products, setProducts] = useState([]); // State for products data
 
-import image1Mobile from '../assest/banner/img1_mobile.jpg'
-import image2Mobile from '../assest/banner/img2_mobile.webp'
-import image3Mobile from '../assest/banner/img3_mobile.jpg'
-import image4Mobile from '../assest/banner/img4_mobile.jpg'
-import image5Mobile from '../assest/banner/img5_mobile.png'
+  useEffect(() => {
+    // Simulating fetching products data after 4 seconds delay (for initial loading)
+    const timer = setTimeout(() => {
+      setProducts([
+        { _id: 1, productName: "CEILING", productImage: ['img1'] },
+        { _id: 2, productName: "FLOOR", productImage: ['img2'] },
+        { _id: 3, productName: "Bathroom", productImage: ['img3'] },
+        { _id: 4, productName: "WALL", productImage: ['img4'] },
+      ]);
+      setLoading(false);
+    }, 4000); // 4000 milliseconds = 4 seconds
 
-import { FaAngleRight } from "react-icons/fa6";
-import { FaAngleLeft } from "react-icons/fa6";
+    // Cleanup function to clear the timer if component unmounts before 4 seconds
+    return () => clearTimeout(timer);
+  }, []);
 
+  const handleMouseEnter = (event) => {
+    event.currentTarget.classList.add('hovered');
+  };
 
-const BannerProduct = () => {
-    const [currentImage,setCurrentImage] = useState(0)
-
-    const desktopImages = [
-        image1,
-        image2,
-        image3,
-        image4,
-        image5
-    ]
-
-    const mobileImages = [
-        image1Mobile,
-        image2Mobile,
-        image3Mobile,
-        image4Mobile,
-        image5Mobile
-    ]
-
-    const nextImage = () =>{
-        if(desktopImages.length - 1 > currentImage){
-            setCurrentImage(preve => preve + 1)
-        }
-    }
-
-    const preveImage = () =>{
-        if(currentImage != 0){
-            setCurrentImage(preve => preve - 1)
-        }
-    }
-
-
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            if(desktopImages.length - 1 > currentImage){
-                nextImage()
-            }else{
-                setCurrentImage(0)
-            }
-        },5000)
-
-        return ()=> clearInterval(interval)
-    },[currentImage])
+  const handleMouseLeave = (event) => {
+    event.currentTarget.classList.remove('hovered');
+  };
 
   return (
-    <div className='container mx-auto px-4 rounded top-3'>
-        <div className='h-56 md:h-72 w-full bg-slate-200 relative'>
-
-                <div className='absolute z-10 h-full w-full md:flex items-center hidden '>
-                    <div className=' flex justify-between w-full h-48 text-2xl'>
-                        <button onClick={preveImage} className='bg-white shadow-md  p-1'><FaAngleLeft/></button>
-                        <button onClick={nextImage} className='bg-white shadow-md  p-1'><FaAngleRight/></button> 
-                    </div>
+    <div className="container mx-auto px-4 my-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {loading
+          ? Array.from({ length: 4 }).map((_, index) => (
+              <div key={index} className="w-full h-50rem bg-slate-200 rounded-sm shadow animate-pulse"></div>
+            ))
+          : products.map((product) => (
+              <Link
+                key={product._id}
+                to={`/product-category`} 
+                className="relative w-full h-[36rem] bg-white rounded-sm shadow overflow-hidden group"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <img
+                  src={
+                    product.productImage[0] === 'img1' ? img1 :
+                    product.productImage[0] === 'img2' ? img2 :
+                    product.productImage[0] === 'img3' ? img3 :
+                    product.productImage[0] === 'img4' ? img4 :
+                    img1 // Default image if product image doesn't match
+                  }
+                  alt={product.productName}
+                  className="object-cover w-full h-full transition-transform transform group-hover:scale-105 transition-all duration-1000"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-20 ransition-transform transform group-hover:scale-105 transition-all duration-1000 flex items-center justify-center opacity-100 transition-opacity">
+                  <h2 className="text-white font-mono text-4xl font-medium">
+                    {product.productName}
+                  </h2>
                 </div>
-
-                {/**desktop and tablet version */}
-              <div className='hidden md:flex h-full w-full overflow-hidden'>
-                {
-                        desktopImages.map((imageURl,index)=>{
-                            return(
-                            <div className='w-full h-full min-w-full min-h-full transition-all' key={imageURl} style={{transform : `translateX(-${currentImage * 100}%)`}}>
-                                <img src={imageURl} className='w-full h-full'/>
-                            </div>
-                            )
-                        })
-                }
-              </div>
-
-                {/**mobile version */}
-                <div className='flex h-full w-full overflow-hidden md:hidden'>
-                {
-                        mobileImages.map((imageURl,index)=>{
-                            return(
-                            <div className='w-full h-full min-w-full min-h-full transition-all' key={imageURl} style={{transform : `translateX(-${currentImage * 100}%)`}}>
-                                <img src={imageURl} className='w-full h-full object-cover'/>
-                            </div>
-                            )
-                        })
-                }
-              </div>
-
-
-        </div>
+              </Link>
+            ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default BannerProduct
+export default Banner;

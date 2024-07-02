@@ -61,11 +61,15 @@ const Header = () => {
                 </Link>
             </div>
 
-            <div className='hidden lg:flex items-center w-96 justify-between  bg-slate-100 border rounded-md focus-within:shadow pl-2'>
+            {/* <div className='hidden lg:flex items-center w-96 justify-between  bg-slate-100 border rounded-md focus-within:shadow pl-2'>
                 <input type='text' placeholder='Search for Products, Brand and More' className='w-full bg-slate-100 outline-none' onChange={handleSearch} value={search}/>
                 <div className='text-lg min-w-[50px] h-8 bg-[#ffc470] flex items-center justify-center  text-black'>
                   <GrSearch />
                 </div>
+            </div> */}
+
+            <div className='text-3xl font-serif font-bold'>
+                
             </div>
 
 
