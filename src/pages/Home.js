@@ -6,10 +6,10 @@ import Banner from '../components/BannerProduct'
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-[#F3F1EF] '>
       {/* <CategoryList/> */}
       <Banner/>
-      <HorizontalCardProduct/>
+      {/* <HorizontalCardProduct/> */}
      
       <VerticalCardProduct category={"ceiling"} heading={"Ceiling"}/>
       <VerticalCardProduct category={"floor"} heading={"Floor"}/>

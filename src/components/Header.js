@@ -53,11 +53,11 @@ const Header = () => {
     }
   }
   return (
-    <header className='h-18  bg-white fixed w-full z-40'>
+    <header className='h-18  bg-[#F3F1EF]  fixed w-full z-40'>
       <div className=' h-full container mx-auto flex items-center px-4 justify-between'>
-            <div className='text-3xl mb-3 font-semibold'>
+            <div className='text-3xl mb-3 font-merienda  font-semibold'>
                 <Link to={"/"}>
-                    Ecomm-Logo
+                    Lightify
                 </Link>
             </div>
 

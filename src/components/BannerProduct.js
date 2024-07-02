@@ -14,9 +14,9 @@ const Banner = () => {
     // Simulating fetching products data after 4 seconds delay (for initial loading)
     const timer = setTimeout(() => {
       setProducts([
-        { _id: 1, productName: "CEILING", productImage: ['img1'] },
-        { _id: 2, productName: "FLOOR", productImage: ['img2'] },
-        { _id: 3, productName: "Bathroom", productImage: ['img3'] },
+        { _id: 1, productName: "FLOOR ", productImage: ['img1'] },
+        { _id: 2, productName: "CEILING", productImage: ['img2'] },
+        { _id: 3, productName: "BATHROOM", productImage: ['img3'] },
         { _id: 4, productName: "WALL", productImage: ['img4'] },
       ]);
       setLoading(false);
@@ -60,9 +60,12 @@ const Banner = () => {
                   alt={product.productName}
                   className="object-cover w-full h-full transition-transform transform group-hover:scale-105 transition-all duration-1000"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-20 ransition-transform transform group-hover:scale-105 transition-all duration-1000 flex items-center justify-center opacity-100 transition-opacity">
-                  <h2 className="text-white font-mono text-4xl font-medium">
+                <div className="absolute inset-0 bg-black bg-opacity-20 ransition-transform transform group-hover:scale-105 transition-all duration-1000 flex flex-col items-center justify-center opacity-100 transition-opacity">
+                  <h2 className="text-white font-merienda text-4xl font-medium">
                     {product.productName}
+                  </h2>
+                  <h2 className="text-white font-merienda text-4xl font-medium">
+                    LAMPS
                   </h2>
                 </div>
               </Link>

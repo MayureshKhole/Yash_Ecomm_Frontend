@@ -6,6 +6,9 @@ module.exports = {
       height: {
         18: "4.2rem", // 4.5rem is equivalent to 72px (1rem = 16px)
       },
+      fontFamily: {
+        merienda: ['Merienda', 'cursive'],
+      },
      
     },
   },
