@@ -19,3 +19,29 @@
     display: none;
 }
 
+@keyframes rotateIn {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(5deg);
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+  
+  .rotate-on-hover:hover {
+    animation: rotateIn 0.5s ease-in-out forwards;
+  }
+  
+  .zoom-on-hover:hover {
+    animation: zoomIn 0.5s ease-in-out forwards;
+  }
+  
