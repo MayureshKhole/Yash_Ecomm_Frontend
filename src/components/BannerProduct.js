@@ -20,7 +20,7 @@ const Banner = () => {
         { _id: 4, productName: "WALL", productImage: ['img4'] },
       ]);
       setLoading(false);
-    }, 4000); // 4000 milliseconds = 4 seconds
+    }, 100); // 4000 milliseconds = 4 seconds
 
     // Cleanup function to clear the timer if component unmounts before 4 seconds
     return () => clearTimeout(timer);
