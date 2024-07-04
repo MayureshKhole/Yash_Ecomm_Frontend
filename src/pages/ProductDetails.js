@@ -97,7 +97,7 @@ const ProductDetails = () => {
   return (
     <div className='container mx-auto p-4'>
 
-      <div className='min-h-[200px] flex flex-col lg:flex-row gap-24'>
+      <div className='min-h-[200px] flex flex-col lg:flex-row gap-4'>
           {/***product Image */}
           <div className='h-96 flex flex-col lg:flex-row-reverse gap-4'>
 
@@ -144,7 +144,9 @@ const ProductDetails = () => {
                         {
                           data?.productImage?.map((imgURL,index) =>{
                             return(
+                              <div className='h-20 w-20 bg-slate-200 rounded p-1' key={imgURL}>
                                 <img src={imgURL} className='w-full h-full object-scale-down mix-blend-multiply cursor-pointer' onMouseEnter={()=>handleMouseEnterProduct(imgURL)}  onClick={()=>handleMouseEnterProduct(imgURL)}/>
+                              </div>
                             )
                           })
                         }
@@ -199,9 +201,11 @@ const ProductDetails = () => {
                   <p>{data?.description}</p>
                 </div>
 
-                <div className='flex items-center gap-3 my-2'>
-                  <button className='border-2 border-[#ffc470] rounded px-3 py-1 min-w-[120px] text-red-600 font-medium hover:bg-[#ffc470] hover:text-white' onClick={(e)=>handleBuyProduct(e,data?._id)}>Buy</button>
-                  <button className='border-2 border-[#ffc470] rounded px-3 py-1 min-w-[120px] font-medium text-white bg-[#ffc470] hover:text-red-600 hover:bg-white' onClick={(e)=>handleAddToCart(e,data?._id)}>Add To Cart</button>
+                <hr/>
+
+                <div className='w-full flex flex-col items-center gap-3 my-2'>
+                  <button className='border-2 border-[#ffc470] rounded px-3 py-1 min-w-[120px] text-[#ffc470] font-medium hover:bg-[#ffc470] hover:text-white' onClick={(e)=>handleBuyProduct(e,data?._id)}>Buy</button>
+                  <button className='border-2 border-[#ffc470] rounded px-3 py-1 min-w-[120px] font-medium text-white bg-[#ffc470] hover:text-[#ffc470] hover:bg-white' onClick={(e)=>handleAddToCart(e,data?._id)}>Add To Cart</button>
                 </div>
 
               </div>
