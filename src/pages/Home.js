@@ -3,6 +3,7 @@ import CategoryList from '../components/CategoryList'
 import HorizontalCardProduct from '../components/HorizontalCardProduct'
 import VerticalCardProduct from '../components/VerticalCardProduct'
 import Banner from '../components/BannerProduct'
+import TestPD from './TestPD'
 
 const Home = () => {
   return (
@@ -15,6 +16,9 @@ const Home = () => {
       <VerticalCardProduct category={"floor"} heading={"Floor"}/>
       <VerticalCardProduct category={"wall"} heading={"Wall"}/>
       <VerticalCardProduct category={"bathroom"} heading={"Bathroom"}/>
+
+
+
       
     </div>
   )
