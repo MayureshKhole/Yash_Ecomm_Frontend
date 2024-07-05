@@ -41,7 +41,7 @@ const VerticalCard = ({loading,data = []}) => {
                 return (
                     <Link
                       to={"product/" + product?._id}
-                      className="w-full min-w-[380px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] bg-[#F3F1EF] rounded-sm shadow overflow-hidden"
+                      className="w-full min-w-[350px] md:min-w-[300px] max-w-[280px] md:max-w-[320px] bg-[#F3F1EF] rounded-sm shadow overflow-hidden"
                     >
                       {/* Image container */}
                       <div className="relative h-[200px] md:h-[400px]">

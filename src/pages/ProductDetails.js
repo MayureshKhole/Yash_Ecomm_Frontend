@@ -211,13 +211,13 @@ const ProductDetails = () => {
 
               <div className="w-full flex flex-col items-center gap-3 my-2">
                 <button
-                  className="border-2 border-[#ffc470] rounded px-3 py-1 w-full text-[#ffc470] font-medium hover:bg-[#ffc470] hover:text-white"
+                  className="border-2 border-[#895F68] rounded px-3 py-1 w-full font-medium text-white bg-[#895F68] hover:text-[#895F68] hover:bg-white"
                   onClick={(e) => handleBuyProduct(e, data?._id)}
                 >
                   Buy
                 </button>
                 <button
-                  className="border-2 border-[#ffc470] rounded px-3 py-1 w-full font-medium text-white bg-[#ffc470] hover:text-[#ffc470] hover:bg-white"
+                  className="border-2 border-[#895F68] rounded px-3 py-1 w-full font-medium text-white bg-[#895F68] hover:text-[#895F68] hover:bg-white"
                   onClick={(e) => handleAddToCart(e, data?._id)}
                 >
                   Add To Cart

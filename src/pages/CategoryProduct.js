@@ -143,7 +143,7 @@ const CategoryProduct = () => {
             <div className='px-4'>
               <p className='font-medium text-slate-800 text-lg my-2'>Search Results : {data.length}</p>
 
-             <div className='min-h-[calc(100vh-120px)] overflow-y-scroll max-h-[calc(100vh-120px)]'>
+             <div className='min-h-[calc(100vh-120px)] overflow-y-scroll gap-2 max-h-[calc(100vh-120px)]'>
               {
                   data.length !== 0 && !loading && (
                     <VerticalCard data={data} loading={loading}/>
