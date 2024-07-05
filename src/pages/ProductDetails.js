@@ -100,31 +100,6 @@ const ProductDetails = () => {
         <div className="left flex-1">
           {/***product Image */}
           <div className="flex flex-col lg:flex-row  gap-4">
-            <div className="lg:w-2/3 relative">
-              <img
-                src={activeImage}
-                className="h-full w-full object-cover mix-blend-multiply"
-                onMouseMove={handleZoomImage}
-                onMouseLeave={handleLeaveImageZoom}
-              />
-
-              {/**product zoom */}
-              {zoomImage && (
-                <div className="hidden lg:block absolute w-[300px] h-[300px] overflow-hidden bg-slate-200 p-1 -right-[320px] top-0">
-                  <div
-                    className="w-full h-full  scale-150"
-                    style={{
-                      background: `url(${activeImage})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: `${zoomImageCoordinate.x * 100}% ${
-                        zoomImageCoordinate.y * 100
-                      }% `,
-                    }}
-                  ></div>
-                </div>
-              )}
-            </div>
-
             <div className="flex lg:flex-col gap-2 overflow-auto scrollbar-none">
               {loading ? (
                 <div className="flex gap-2 lg:flex-col overflow-scroll scrollbar-none h-full">
@@ -151,6 +126,30 @@ const ProductDetails = () => {
                       </div>
                     );
                   })}
+                </div>
+              )}
+            </div>
+            <div className="lg:w-2/3 relative">
+              <img
+                src={activeImage}
+                className="h-full w-full object-cover mix-blend-multiply"
+                onMouseMove={handleZoomImage}
+                onMouseLeave={handleLeaveImageZoom}
+              />
+
+              {/**product zoom */}
+              {zoomImage && (
+                <div className="hidden lg:block absolute w-[300px] h-[300px] overflow-hidden bg-slate-200 p-1 -right-[320px] top-0">
+                  <div
+                    className="w-full h-full  scale-150"
+                    style={{
+                      background: `url(${activeImage})`,
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: `${zoomImageCoordinate.x * 100}% ${
+                        zoomImageCoordinate.y * 100
+                      }% `,
+                    }}
+                  ></div>
                 </div>
               )}
             </div>
@@ -212,13 +211,13 @@ const ProductDetails = () => {
 
               <div className="w-full flex flex-col items-center gap-3 my-2">
                 <button
-                  className="border-2 border-[#ffc470] rounded px-3 py-1 min-w-[120px] text-[#ffc470] font-medium hover:bg-[#ffc470] hover:text-white"
+                  className="border-2 border-[#ffc470] rounded px-3 py-1 w-full text-[#ffc470] font-medium hover:bg-[#ffc470] hover:text-white"
                   onClick={(e) => handleBuyProduct(e, data?._id)}
                 >
                   Buy
                 </button>
                 <button
-                  className="border-2 border-[#ffc470] rounded px-3 py-1 min-w-[120px] font-medium text-white bg-[#ffc470] hover:text-[#ffc470] hover:bg-white"
+                  className="border-2 border-[#ffc470] rounded px-3 py-1 w-full font-medium text-white bg-[#ffc470] hover:text-[#ffc470] hover:bg-white"
                   onClick={(e) => handleAddToCart(e, data?._id)}
                 >
                   Add To Cart
